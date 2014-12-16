@@ -1,0 +1,28 @@
+{
+  "name": "bonkiechat",
+  "version": "0.0.1",
+  "description": "Bonkie Chat is chat for Bonkies",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mibdw/bonkiechat"
+  },
+  "keywords": [
+    "bonkie",
+    "chat",
+    "bonkiechat"
+  ],
+  "author": "Ben van den Ende",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mibdw/bonkiechat/issues"
+  },
+  "homepage": "https://github.com/mibdw/bonkiechat",
+  "dependencies": {
+    "express": "^4.10.6",
+    "socket.io": "^1.2.1"
+  }
+}
