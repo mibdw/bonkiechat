@@ -16,13 +16,13 @@ $(window).focus(function () {
 
 $('.letter input').focus()
 
-$('.letter').submit( function () {
+$('form.letter').submit( function () {
 	if ($('.letter input').val().length > 0) socket.emit('letter', $('.letter input').val());
 	$('.kies').remove();
 	$('.nieuw input').removeAttr('disabled');
 });
 
-$('.nieuw').submit( function () {
+$('form.nieuw').submit( function () {
 	if ($('.nieuw input').val().length > 0) socket.emit('bericht', $('.nieuw input').val());
 	$('.nieuw input').val('');
 	return false;

@@ -27,6 +27,6 @@ io.on('connection', function (socket) {
   });
 });
 
-http.listen(3000, function () {
+http.listen(15333, function () {
 	console.log('Bonkiechat rules!');
 });
