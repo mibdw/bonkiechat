@@ -19,12 +19,12 @@ $(window).focus(function () {
 $('.letter input').focus()
 
 $('form.letter').submit( function () {
-	event.preventDefault();
 	if ($('.letter input').val().length > 0) {
 		socket.emit('letter', $('.letter input').val());
 		ikke = $('.letter input').val().toUpperCase();
 		$('.kies').remove();
 		$('.nieuw input').removeAttr('disabled');
+		return false;
 	}
 });
 
