@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<title>Bonkiechat</title>
 
+	<link rel="shortcut icon"  href="/favicon.ico">
+	
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 		body { font: 16px sans-serif; padding: 1em; }
@@ -17,14 +19,17 @@
 		.berichten li:last-child { padding-bottom: 1em }
 		.berichten li time { position: absolute; left: 1em; color: lightgrey;}
 		.berichten li span { position: absolute; left: 4.25em; color: lightgrey; font-weight: bold; }
-		.berichten li em { position: absolute; left: 4.25em; color: lightgrey; }
+		.berichten li em { position: absolute; left: 4.25em; color: lightseagreen; }
 		.kies { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: black; opacity: .7; }
 		.kies .letter { position: absolute; top: 50%; width: 100%; margin-top: -2em; font-size: 2em; color: white; text-align: center }
 		.kies .letter input { font-size: 1.3em; width: 1.2em; text-align: center; text-transform: uppercase; }
+		.overzicht { position: fixed; display: inline; top: 1em; right: 1em; background-color: white; } 
 	</style>
 
 </head>
 <body>
+
+	<div class="overzicht"></div>
 	
 	<ul class="berichten"></ul>
 
