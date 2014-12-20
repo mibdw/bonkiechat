@@ -29,7 +29,6 @@ $('form.letter').submit( function () {
 });
 
 $('form.nieuw').submit( function () {
-	event.preventDefault();
 	if ($('.nieuw input').val().length > 0) {
 		socket.emit('bericht', $('.nieuw input').val());
 	 	$('.berichten').append('<li><time>' + moment().format('HH:mm') + '</time><span>' + ikke + '</span>' + $('.nieuw input').val() + '</li>');
