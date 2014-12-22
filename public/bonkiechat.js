@@ -32,6 +32,7 @@ $('form.nieuw').submit( function () {
 	if ($('.nieuw input').val().length > 0) {
 		socket.emit('bericht', $('.nieuw input').val());
 	 	$('.berichten').append('<li><time>' + moment().format('HH:mm') + '</time><span>' + ikke + '</span>' + $('.nieuw input').val() + '</li>');
+		b[0].scrollTop = b[0].scrollHeight;
 		$('.nieuw input').val('');
 		return false;
 	}
