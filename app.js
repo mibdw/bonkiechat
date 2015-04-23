@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var Autolinker = require('autolinker');
 
 app.use(express.static(__dirname + '/public')); 
 
@@ -22,8 +23,9 @@ io.on('connection', function (socket) {
 		socket.emit('overzicht', gebruikers);		
 	});
 
-	socket.on('bericht', function (bericht) { 
-		socket.broadcast.emit('nieuw', {'gebruiker': gebruiker, 'inhoud': bericht }); 
+	socket.on('bericht', function (bericht) {
+		var linkBericht = Autolinker.link(bericht, { truncate: 40 });
+		socket.broadcast.emit('nieuw', {'gebruiker': gebruiker, 'inhoud': linkBericht }); 
 	});
 
 	socket.on('disconnect', function () {

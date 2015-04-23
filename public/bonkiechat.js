@@ -31,9 +31,12 @@ $('form.letter').submit( function () {
 $('form.nieuw').submit( function () {
 	if ($('.nieuw input').val().length > 0) {
 		socket.emit('bericht', $('.nieuw input').val());
-	 	$('.berichten').append('<li><time>' + moment().format('HH:mm') + '</time><span>' + ikke + '</span>' + $('.nieuw input').val() + '</li>');
+		var nieuwBericht = $('.nieuw input').val();
+		var linkBericht = Autolinker.link(nieuwBericht, { truncate: 40 });
+	 	$('.berichten').append('<li><time>' + moment().format('HH:mm') + '</time><span>' + ikke + '</span>' + linkBericht + '</li>');
 		b[0].scrollTop = b[0].scrollHeight;
 		$('.nieuw input').val('');
+		$('.nieuw input').focus();
 		return false;
 	}
 
