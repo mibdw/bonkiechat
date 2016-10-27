@@ -1,0 +1,186 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Consolas', 'Monaco', monospace;
+	font-size: 16px;
+}
+
+body {
+	font-size: 16px;
+}
+
+.main() {
+
+	&#init-form {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+
+		input {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 30rem;
+			height: 5rem;
+			margin-left: -15rem;
+			margin-top: -2.5rem;
+			font-size: 3em;
+			line-height: 5rem;
+			border-width: 0 0 4px;
+			border-style: solid;
+			border-color: lighten(@text, 30%);
+			background-color: transparent;
+			text-align: center;
+			color: @text;
+		}
+	}
+
+	#messages {
+		background-color: @back;
+		color: @text;
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 14rem;
+		bottom: 3rem;
+		overflow: auto;
+		list-style-type: none;
+		padding: .5em 0 0 1em;
+
+		li {
+
+			&.self { 
+				color: @self; 
+				span a { 
+					color: lighten(@self, 3%); 
+					&:hover { color: @self; }
+				}
+			}
+			&.other { 
+				color: @other; 
+				span a { 
+					color: lighten(@other, 3%); 
+					&:hover { color: @other; }
+				}
+			}
+			&.bot { 
+				color: @bot; 
+				span a { 
+					color: lighten(@bot, 3%); 
+					&:hover { color: @bot; }
+				}
+			}
+
+			time {
+				margin-right: .6rem;
+				opacity: .4;
+				color: @text;
+			}
+			
+			span {
+				margin-left: .7rem;
+
+				a { 
+					color: lighten(@text, 3%); 
+					&:hover { color: @text; }
+				}
+			}
+
+		}
+	}
+
+	#message-form {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		input {
+			height: 3rem;
+			line-height: 3rem;
+			font-size: 1.2em;
+			background-color: @back;
+			color: @text;
+			width: 100%;
+			border-width: 2px 0 0;
+			border-style: solid;
+			border-color: @line;
+			padding: 0 .8em;
+		}
+	}
+
+	#users {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 3rem;
+		width: 14rem;
+		padding: 1.5rem .5em;
+		background-color: @back;
+		border-width: 0 0 0 2px;
+		border-style: solid;
+		border-color: @line;
+		list-style-type: none;
+		color: @text;
+	}
+
+	#user-form {
+		position: fixed;
+		top: .3rem;
+		right: 0;
+		width: 14rem;
+
+		input {
+			background-color: transparent;
+			width: 100%;
+			color: @self;
+			border-width: 0;
+			padding: 0 .6rem 0;
+			line-height: 1em;
+
+			&:focus, &:hover {
+				text-decoration: underline;
+			}	
+		}
+	}
+
+	#theme-toggle {
+		position: fixed;
+		right: 0;
+		bottom: 3rem;
+		width: 14rem;
+		border-radius: 0;
+		border-width: 0;
+		background-color: @line;
+		color: @text;
+		padding: .3em 0;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.dark {
+	@back: #222;
+	@line: darken(@back, 5%);
+	@text: #eee;
+	@self: #f9e79f;
+	@other: @text;
+	@bot: #a9cce3;
+
+	.main();
+}
+
+.light {
+	@back: #fff;
+	@line: darken(@back, 5%);
+	@text: #222;
+	@self: #873600;
+	@other: @text;
+	@bot: #2874a6;
+
+	.main();
+}

@@ -1,29 +1,35 @@
 {
   "name": "bonkiechat",
-  "version": "0.0.1",
-  "description": "Bonkie Chat is chat for Bonkies",
-  "main": "app.js",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server && webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/mibdw/bonkiechat"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   },
-  "keywords": [
-    "bonkie",
-    "chat",
-    "bonkiechat"
-  ],
-  "author": "Ben van den Ende",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mibdw/bonkiechat/issues"
-  },
-  "homepage": "https://github.com/mibdw/bonkiechat",
   "dependencies": {
-    "autolinker": "^0.17.1",
-    "express": "^4.10.6",
-    "socket.io": "^1.2.1"
+    "autolinker": "^1.2.1",
+    "express": "^4.14.0",
+    "moment": "^2.15.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "socket.io": "^1.5.1"
   }
 }
