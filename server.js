@@ -1,10 +1,13 @@
 const express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server);
+	io = require('socket.io').listen(server),
+	favicon = require('server-favicon');
 
 app.use(express.static(__dirname + '/public'))
-server.listen(888, () => { console.log('http://localhost:888') });
+app.use(favicon(__dirname + '/public/favicon.ico'))
+
+server.listen(15333, () => { console.log('http://localhost:15333') });
 
 const userNames = { 'Jenkins': 'Jenkins' };
 
