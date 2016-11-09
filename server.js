@@ -7,11 +7,11 @@ const express = require('express'),
 app.use(express.static(__dirname + '/public'))
 app.use(favicon(__dirname + '/public/favicon.ico'))
 
-server.listen(15333, () => { console.log('http://localhost:15333') });
+server.listen(15333, function () { console.log('http://localhost:15333') });
 
 const userNames = { 'Jenkins': 'Jenkins' };
 
-io.on('connection', socket => {
+io.on('connection', function (socket) {
 	let name;
 
 	socket.on('user:init', (data, callback) => {
