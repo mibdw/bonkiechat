@@ -1,4 +1,4 @@
-const express = require('express'),
+var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server),
@@ -9,10 +9,10 @@ app.use(favicon(__dirname + '/public/favicon.ico'))
 
 server.listen(15333, function () { console.log('http://localhost:15333') });
 
-const userNames = { 'Jenkins': 'Jenkins' };
+var userNames = { 'Jenkins': 'Jenkins' };
 
 io.on('connection', function (socket) {
-	let name;
+	var name;
 
 	socket.on('user:init', (data, callback) => {
 		
@@ -20,7 +20,7 @@ io.on('connection', function (socket) {
 			name = data.name;
 			userNames[name] = name;
 
-			let userList = [];
+			var userList = [];
 			for (user in userNames) {
 				userList.push(user);
 			}
@@ -44,7 +44,7 @@ io.on('connection', function (socket) {
 	});
 
 	socket.on('user:name', function (data, callback) {
-		let newName = data.newName, oldName = name;
+		var newName = data.newName, oldName = name;
 
 		if (userNames[newName]) {
 
